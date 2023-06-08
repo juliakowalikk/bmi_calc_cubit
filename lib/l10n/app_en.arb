@@ -1,8 +1,8 @@
 {
   "title": "BMI CALCULATOR",
-  "male": "Male",
-  "female": "Female",
-  "height": "Height",
-  "age": "Age",
+  "male": "MALE",
+  "female": "FEMALE",
+  "height": "HEIGHT",
+  "age": "AGE",
   "calculate": "CALCULATE YOUR BMI"
 }
