@@ -3,6 +3,7 @@
   "male": "MALE",
   "female": "FEMALE",
   "height": "HEIGHT",
+  "weight": "WEIGHT",
   "age": "AGE",
   "calculate": "CALCULATE YOUR BMI",
   "cm": "cm"

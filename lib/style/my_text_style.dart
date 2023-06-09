@@ -8,7 +8,7 @@ class MyTextStyle {
     color: white,
   );
   static TextStyle style2 = const TextStyle(
-    fontSize: 46,
+    fontSize: 50,
     fontWeight: FontWeight.w800,
     color: white,
   );

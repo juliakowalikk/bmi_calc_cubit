@@ -6,3 +6,4 @@ const Color pink = Color(0xFFFF0066);
 const Color white = Color(0xFFFFFFFF);
 const Color grey = Color(0xFF9E9E9E);
 const Color darkBlue = Color(0xFF141A3C);
+const Color navyBlue2 = Color(0xFF212747);

@@ -32,7 +32,7 @@ class GenderTile extends StatelessWidget {
                   onTap: onPressed,
                   child: Icon(
                     icon,
-                    size: 70,
+                    size: 80,
                     color: isClicked ? white : grey,
                   ),
                 ),
