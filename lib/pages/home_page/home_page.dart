@@ -23,6 +23,10 @@ class _HomePageState extends State<HomePage> {
           return Scaffold(
             backgroundColor: backgroundColor,
             appBar: AppBar(
+              leading: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.menu),
+              ),
               backgroundColor: navyBlue,
               title: Text(Strings.of(context).title),
             ),

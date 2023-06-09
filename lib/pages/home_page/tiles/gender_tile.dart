@@ -1,6 +1,5 @@
 import 'package:bmi_calc_cubit/style/colors.dart';
 import 'package:bmi_calc_cubit/style/dimens.dart';
-import 'package:bmi_calc_cubit/style/my_text_style.dart';
 import 'package:flutter/material.dart';
 
 class GenderTile extends StatelessWidget {
@@ -41,7 +40,11 @@ class GenderTile extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: Dimens.xxl),
                 child: Text(
                   title,
-                  style: MyTextStyle.style1,
+                  style: TextStyle(
+                    color: isClicked ? white : grey,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],

@@ -5,7 +5,7 @@ class MyTextStyle {
   static TextStyle style1 = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: white,
+    color: grey,
   );
   static TextStyle style2 = const TextStyle(
     fontSize: 50,

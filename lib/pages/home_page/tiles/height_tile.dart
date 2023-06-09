@@ -20,7 +20,6 @@ class _HeightTileState extends State<HeightTile> {
   @override
   Widget build(BuildContext context) => BlocBuilder<BmiCubit, BmiState>(
         builder: (context, state) {
-          print(state.height);
           double sliderValue = state.height;
           return Padding(
             padding: const EdgeInsets.symmetric(
