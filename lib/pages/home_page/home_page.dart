@@ -1,3 +1,4 @@
+import 'package:bmi_calc_cubit/pages/home_page/tiles/height_tile.dart';
 import 'package:bmi_calc_cubit/pages/home_page/widgets/gender_part.dart';
 import 'package:bmi_calc_cubit/style/colors.dart';
 import 'package:bmi_calc_cubit/style/dimens.dart';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: const [
               GenderPart(),
+              HeightTile(),
             ],
           ),
         ),

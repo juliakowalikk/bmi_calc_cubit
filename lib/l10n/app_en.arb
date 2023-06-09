@@ -4,5 +4,6 @@
   "female": "FEMALE",
   "height": "HEIGHT",
   "age": "AGE",
-  "calculate": "CALCULATE YOUR BMI"
+  "calculate": "CALCULATE YOUR BMI",
+  "cm": "cm"
 }
