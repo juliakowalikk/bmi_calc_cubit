@@ -23,7 +23,7 @@ class _HeightTileState extends State<HeightTile> {
           double sliderValue = state.height;
           return Padding(
             padding: const EdgeInsets.symmetric(
-                vertical: Dimens.xl, horizontal: Dimens.s),
+                vertical: Dimens.xxl, horizontal: Dimens.s),
             child: Container(
               decoration: const BoxDecoration(color: darkBlue),
               child: Padding(

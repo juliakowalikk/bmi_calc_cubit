@@ -19,7 +19,8 @@ class WeightAgeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(Dimens.s),
+        padding: const EdgeInsets.symmetric(
+            vertical: Dimens.l, horizontal: Dimens.s),
         child: Container(
           decoration: const BoxDecoration(color: darkBlue),
           child: Padding(
@@ -31,7 +32,7 @@ class WeightAgeTile extends StatelessWidget {
                   style: MyTextStyle.style1,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(Dimens.xl),
+                  padding: const EdgeInsets.all(Dimens.l),
                   child: Text(
                     '$value',
                     style: MyTextStyle.style2,

@@ -20,7 +20,8 @@ class GenderTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(Dimens.s),
+        padding: const EdgeInsets.symmetric(
+            vertical: Dimens.xxl, horizontal: Dimens.s),
         child: Container(
           decoration: const BoxDecoration(color: navyBlue),
           child: Column(

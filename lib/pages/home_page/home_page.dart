@@ -1,6 +1,7 @@
 import 'package:bmi_calc_cubit/cubit/bmi_cubit.dart';
 import 'package:bmi_calc_cubit/cubit/bmi_state.dart';
 import 'package:bmi_calc_cubit/pages/home_page/tiles/height_tile.dart';
+import 'package:bmi_calc_cubit/pages/home_page/widgets/calculate_button.dart';
 import 'package:bmi_calc_cubit/pages/home_page/widgets/gender_part.dart';
 import 'package:bmi_calc_cubit/pages/home_page/widgets/weight_age_part.dart';
 import 'package:bmi_calc_cubit/style/colors.dart';
@@ -30,14 +31,19 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: navyBlue,
               title: Text(Strings.of(context).title),
             ),
-            body: Padding(
-              padding: const EdgeInsets.all(Dimens.l),
-              child: Column(
-                children: const [
-                  GenderPart(),
-                  HeightTile(),
-                  WeightAgePart(),
-                ],
+            body: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(Dimens.xxl),
+                child: Column(
+                  children: [
+                    const GenderPart(),
+                    const HeightTile(),
+                    const WeightAgePart(),
+                    CalculateButton(
+                      onCalculate: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
           );

@@ -12,4 +12,9 @@ class MyTextStyle {
     fontWeight: FontWeight.w800,
     color: white,
   );
+  static TextStyle style3 = const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: white,
+  );
 }
