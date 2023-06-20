@@ -43,4 +43,11 @@ class BmiCubit extends Cubit<BmiState> {
       weight: state.weight,
     ));
   }
+
+  void calculateBMI() {
+    final double height = state.height / 100;
+    final double bmi = state.weight / (height * height);
+    emit(BmiCalculated(
+        bmi: bmi, age: state.age, height: state.height, weight: state.weight));
+  }
 }

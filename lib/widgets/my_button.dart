@@ -2,14 +2,15 @@ import 'package:bmi_calc_cubit/style/colors.dart';
 import 'package:bmi_calc_cubit/style/dimens.dart';
 import 'package:bmi_calc_cubit/style/my_text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class CalculateButton extends StatelessWidget {
-  final Function() onCalculate;
+class MyButton extends StatelessWidget {
+  final Function() onPressed;
+  final String title;
 
-  const CalculateButton({
+  const MyButton({
     super.key,
-    required this.onCalculate,
+    required this.onPressed,
+    required this.title,
   });
 
   @override
@@ -20,11 +21,11 @@ class CalculateButton extends StatelessWidget {
           width: double.infinity,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: pink),
-            onPressed: () => onCalculate,
+            onPressed: onPressed,
             child: Padding(
               padding: const EdgeInsets.all(Dimens.xxl),
               child: Text(
-                Strings.of(context).calculate,
+                title,
                 style: MyTextStyle.style3,
               ),
             ),
