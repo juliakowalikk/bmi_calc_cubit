@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class BmiCubit extends Cubit<BmiState> {
   BmiCubit() : super(BmiInitial());
 
+  final List<double> _resultHistory = [];
+
   void changeSliderValue(double value) {
     emit(BmiInitial(
       height: value,
@@ -49,5 +51,15 @@ class BmiCubit extends Cubit<BmiState> {
     final double bmi = state.weight / (height * height);
     emit(BmiCalculated(
         bmi: bmi, age: state.age, height: state.height, weight: state.weight));
+  }
+
+  void saveResult(double bmi) {
+    _resultHistory.add(bmi);
+    emit(BmiSaved(
+        resultHistory: _resultHistory,
+        bmi: bmi,
+        age: state.age,
+        height: state.height,
+        weight: state.weight));
   }
 }

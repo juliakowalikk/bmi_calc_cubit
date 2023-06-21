@@ -14,5 +14,6 @@
   "normBMI": "18,5 - 25 kg/m2",
   "history": "History",
   "settings": "Settings",
-  "support": "Support"
+  "support": "Support",
+  "historyTitle": "HISTORY"
 }

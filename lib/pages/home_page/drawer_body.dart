@@ -25,12 +25,15 @@ class DrawerBody extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.history),
               title: Text(Strings.of(context).history),
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HistoryPage(),
-                ),
-              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HistoryPage(),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.settings),

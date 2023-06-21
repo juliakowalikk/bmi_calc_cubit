@@ -1,7 +1,9 @@
+import 'package:bmi_calc_cubit/cubit/bmi_cubit.dart';
 import 'package:bmi_calc_cubit/style/colors.dart';
 import 'package:bmi_calc_cubit/style/dimens.dart';
 import 'package:bmi_calc_cubit/style/my_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResultBody extends StatelessWidget {
@@ -64,7 +66,9 @@ class ResultBody extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: backgroundColor),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.read<BmiCubit>().saveResult(bmi);
+                        },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: Dimens.xxxl, vertical: Dimens.xxl),
@@ -74,12 +78,12 @@ class ResultBody extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       );
   String resultDescription(double bmi) {
