@@ -1,8 +1,10 @@
+import 'package:bmi_calc_cubit/bmi_class.dart';
+
 abstract class BmiState {
   final double height;
   final int age;
   final int weight;
-  final List<double> resultHistory;
+  final List<Result> resultHistory;
 
   BmiState({
     this.resultHistory = const [],
@@ -38,6 +40,14 @@ class BmiSaved extends BmiState {
   BmiSaved(
       {required this.bmi,
       required super.resultHistory,
+      required super.age,
+      required super.height,
+      required super.weight});
+}
+
+class BmiRemove extends BmiState {
+  BmiRemove(
+      {required super.resultHistory,
       required super.age,
       required super.height,
       required super.weight});

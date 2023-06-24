@@ -16,6 +16,8 @@
   "settings": "Settings",
   "support": "Support",
   "historyTitle": "HISTORY",
+  "historyBMI": "BMI = {bmi}",
+  "historyKg": "{weight} kg",
   "underweightDescription": "Your weight is less than it ideally should be.",
   "normalWeightDescription":"Your BMI is currently within what is considered a healthy weight range.",
   "overweightDescription": "Your weight appears to be a bit above the ideal range.",

@@ -47,4 +47,9 @@ class MyTextStyle {
     fontWeight: FontWeight.w400,
     color: white,
   );
+  static TextStyle style10 = const TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+    color: white,
+  );
 }
