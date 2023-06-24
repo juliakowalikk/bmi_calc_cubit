@@ -34,7 +34,7 @@ class ResultBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(Dimens.l),
                       child: Text(
-                        shortResult(bmi),
+                        shortResult(bmi, context),
                         style: MyTextStyle.style5,
                       ),
                     ),
@@ -56,7 +56,7 @@ class ResultBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(Dimens.xxxl),
                       child: Text(
-                        resultDescription(bmi),
+                        resultDescription(bmi, context),
                         style: MyTextStyle.style7,
                         textAlign: TextAlign.center,
                       ),
@@ -86,27 +86,27 @@ class ResultBody extends StatelessWidget {
           ),
         ],
       );
-  String resultDescription(double bmi) {
+  String resultDescription(double bmi, context) {
     if (bmi < 18.5) {
-      return "Your weight is less than it ideally should be.";
+      return Strings.of(context).underweightDescription;
     } else if (bmi < 25) {
-      return 'Your BMI is currently within what is considered a healthy weight range.';
+      return Strings.of(context).normalWeightDescription;
     } else if (bmi < 30) {
-      return 'Your weight appears to be a bit above the ideal range.';
+      return Strings.of(context).overweightDescription;
     } else {
-      return 'You currently weigh more than is ideal.';
+      return Strings.of(context).obesityDescription;
     }
   }
 
-  String shortResult(double bmi) {
+  String shortResult(double bmi, context) {
     if (bmi < 18.5) {
-      return "UNDERWEIGHT";
+      return Strings.of(context).underweightTitle;
     } else if (bmi < 25) {
-      return 'NORMAL';
+      return Strings.of(context).normalWeightTitle;
     } else if (bmi < 30) {
-      return 'OVERWEIGHT';
+      return Strings.of(context).overweightDescription;
     } else {
-      return 'OBESITY';
+      return Strings.of(context).obesityDescription;
     }
   }
 }
