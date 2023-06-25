@@ -19,63 +19,77 @@ class HistoryListView extends StatelessWidget {
     return BlocBuilder<BmiCubit, BmiState>(
       builder: (context, state) {
         final List<Result> resultHistory = state.resultHistory;
-        return Padding(
-          padding: const EdgeInsets.all(Dimens.l),
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: resultHistory.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(Dimens.s),
-                child: Container(
-                  decoration: const BoxDecoration(color: navyBlue),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(Dimens.xm),
-                            child: Text(
-                                Strings.of(context).historyBMI(
-                                  resultHistory[index].bmi.toStringAsFixed(2),
+        return Column(
+          children: [
+            resultHistory.isEmpty
+                ? Center(
+                    child: Padding(
+                    padding: const EdgeInsets.all(Dimens.xxl),
+                    child: Text(
+                      Strings.of(context).emptyHistory,
+                      textAlign: TextAlign.center,
+                      style: MyTextStyle.style1,
+                    ),
+                  ))
+                : Padding(
+                    padding: const EdgeInsets.all(Dimens.l),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: resultHistory.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.all(Dimens.s),
+                        child: Container(
+                          decoration: const BoxDecoration(color: navyBlue),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(Dimens.xm),
+                                    child: Text(
+                                        Strings.of(context).historyBMI(
+                                          resultHistory[index]
+                                              .bmi
+                                              .toStringAsFixed(2),
+                                        ),
+                                        style: MyTextStyle.style1),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: Dimens.xm, bottom: Dimens.xm),
+                                    child: Text(
+                                      formattedDate,
+                                      style: MyTextStyle.style10,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Padding(
+                                padding: const EdgeInsets.all(Dimens.xm),
+                                child: Text(
+                                  Strings.of(context)
+                                      .historyKg(resultHistory[index].weight),
+                                  style: MyTextStyle.style10,
                                 ),
-                                style: MyTextStyle.style1),
+                              ),
+                              IconButton(
+                                onPressed: () => context
+                                    .read<BmiCubit>()
+                                    .removeHistoryElement(index),
+                                icon: const Icon(
+                                  Icons.remove,
+                                  color: white,
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: Dimens.xm, bottom: Dimens.xm),
-                            child: Text(
-                              formattedDate,
-                              style: MyTextStyle.style10,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.all(Dimens.xm),
-                        child: Text(
-                          Strings.of(context)
-                              .historyKg(resultHistory[index].weight),
-                          style: MyTextStyle.style10,
                         ),
                       ),
-                      IconButton(
-                        onPressed: () => context
-                            .read<BmiCubit>()
-                            .removeHistoryElement(index),
-                        icon: const Icon(
-                          Icons.remove,
-                          color: white,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
+          ],
         );
       },
     );

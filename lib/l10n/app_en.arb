@@ -26,5 +26,6 @@
   "normalWeightTitle":"NORMAL",
   "overweightTitle": "OVERWEIGHT",
   "obesityTitle":"OBESITY",
-  "snackBarMessage": "Your BMI has been successfully saved!"
+  "snackBarMessage": "Your BMI has been successfully saved!",
+  "emptyHistory": "Oops! Your BMI history is empty. \nAdd your BMI result by clicking SAVE RESULT at Result Page."
 }
