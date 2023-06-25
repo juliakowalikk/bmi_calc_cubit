@@ -17,41 +17,39 @@ class GenderTile extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: Dimens.xxl, horizontal: Dimens.s),
-        child: Container(
-          decoration: const BoxDecoration(color: navyBlue),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(Dimens.l),
-                child: InkWell(
-                  onTap: onPressed,
-                  child: Icon(
-                    icon,
-                    size: 80,
-                    color: isClicked ? white : grey,
+  Widget build(BuildContext context) => Expanded(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+              vertical: Dimens.xxl, horizontal: Dimens.s),
+          child: Container(
+            decoration: const BoxDecoration(color: navyBlue),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(Dimens.l),
+                  child: InkWell(
+                    onTap: onPressed,
+                    child: Icon(
+                      icon,
+                      size: 80,
+                      color: isClicked ? white : grey,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: Dimens.xxl),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: isClicked ? white : grey,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: Dimens.xxl),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: isClicked ? white : grey,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

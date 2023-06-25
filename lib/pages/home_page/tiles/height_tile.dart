@@ -63,11 +63,10 @@ class _HeightTileState extends State<HeightTile> {
                         value: sliderValue,
                         inactiveColor: grey,
                         activeColor: Colors.white,
-                        onChanged: (double value) {
-                          setState(() {
-                            context.read<BmiCubit>().changeSliderValue(value);
-                          });
-                        },
+                        onChanged: (double value) => setState(
+                          () =>
+                              context.read<BmiCubit>().changeSliderValue(value),
+                        ),
                       ),
                     )
                   ],

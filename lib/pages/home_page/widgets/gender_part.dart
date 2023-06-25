@@ -14,32 +14,28 @@ class GenderPart extends StatefulWidget {
 class _GenderPartState extends State<GenderPart> {
   bool isMaleSelected = true;
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        GenderTile(
-          title: Strings.of(context).male,
-          icon: Icons.male,
-          onPressed: () => changeTile(Gender.male),
-          isClicked: isMaleSelected,
-        ),
-        GenderTile(
-          title: Strings.of(context).female,
-          icon: Icons.female,
-          onPressed: () => changeTile(Gender.female),
-          isClicked: !isMaleSelected,
-        ),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Row(
+        children: [
+          GenderTile(
+            title: Strings.of(context).male,
+            icon: Icons.male,
+            onPressed: () => changeTile(Gender.male),
+            isClicked: isMaleSelected,
+          ),
+          GenderTile(
+            title: Strings.of(context).female,
+            icon: Icons.female,
+            onPressed: () => changeTile(Gender.female),
+            isClicked: !isMaleSelected,
+          ),
+        ],
+      );
 
-  void changeTile(Gender gender) {
-    setState(() {
-      if (gender == Gender.male) {
-        isMaleSelected = true;
-      } else if (gender == Gender.female) {
-        isMaleSelected = false;
-      }
-    });
-  }
+  void changeTile(Gender gender) => setState(() {
+        if (gender == Gender.male) {
+          isMaleSelected = true;
+        } else if (gender == Gender.female) {
+          isMaleSelected = false;
+        }
+      });
 }

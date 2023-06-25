@@ -5,18 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class WeightAgePart extends StatefulWidget {
+class WeightAgePart extends StatelessWidget {
   const WeightAgePart({super.key});
 
   @override
-  State<WeightAgePart> createState() => _WeightAgePartState();
-}
-
-class _WeightAgePartState extends State<WeightAgePart> {
-  @override
-  Widget build(BuildContext context) =>
-      BlocBuilder<BmiCubit, BmiState>(builder: (context, state) {
-        return Row(
+  Widget build(BuildContext context) => BlocBuilder<BmiCubit, BmiState>(
+        builder: (context, state) => Row(
           children: [
             Expanded(
               child: WeightAgeTile(
@@ -33,6 +27,6 @@ class _WeightAgePartState extends State<WeightAgePart> {
                   nameOfParameter: Strings.of(context).age),
             )
           ],
-        );
-      });
+        ),
+      );
 }

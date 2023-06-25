@@ -1,6 +1,6 @@
-import 'package:bmi_calc_cubit/bmi_class.dart';
 import 'package:bmi_calc_cubit/cubit/bmi_cubit.dart';
 import 'package:bmi_calc_cubit/cubit/bmi_state.dart';
+import 'package:bmi_calc_cubit/models.dart';
 import 'package:bmi_calc_cubit/style/colors.dart';
 import 'package:bmi_calc_cubit/style/dimens.dart';
 import 'package:bmi_calc_cubit/style/my_text_style.dart';

@@ -1,4 +1,4 @@
-import 'package:bmi_calc_cubit/bmi_class.dart';
+import 'package:bmi_calc_cubit/models.dart';
 
 abstract class BmiState {
   final double height;
