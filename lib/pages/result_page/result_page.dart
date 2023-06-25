@@ -16,31 +16,52 @@ class ResultPage extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => BlocBuilder<BmiCubit, BmiState>(
-        builder: (context, state) {
-          return Scaffold(
-            backgroundColor: backgroundColor,
-            appBar: AppBar(
-              backgroundColor: navyBlue,
-              title: Text(Strings.of(context).title),
-            ),
-            body: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(Dimens.xxl),
-                child: Column(
-                  children: [
-                    ResultBody(bmi: calculatedBmi),
-                    const Spacer(),
-                    MyButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        title: Strings.of(context).recalculate),
-                  ],
+  Widget build(BuildContext context) => ScaffoldMessenger(
+        child: BlocListener<BmiCubit, BmiState>(
+          listener: _listener,
+          child: BlocBuilder<BmiCubit, BmiState>(
+            builder: (context, state) {
+              return Scaffold(
+                backgroundColor: backgroundColor,
+                appBar: AppBar(
+                  backgroundColor: navyBlue,
+                  title: Text(Strings.of(context).title),
                 ),
-              ),
-            ),
-          );
-        },
+                body: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(Dimens.xxl),
+                    child: Column(
+                      children: [
+                        ResultBody(bmi: calculatedBmi),
+                        Padding(
+                          padding: const EdgeInsets.only(top: Dimens.xxxl),
+                          child: MyButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              title: Strings.of(context).recalculate),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
       );
+
+  void _listener(
+    BuildContext context,
+    BmiState state,
+  ) {
+    if (state is BmiSaved) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: navyBlue,
+          content: Text(Strings.of(context).snackBarMessage),
+        ),
+      );
+    }
+  }
 }

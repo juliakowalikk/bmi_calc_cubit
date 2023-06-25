@@ -25,5 +25,6 @@
   "underweightTitle": "UNDERWEIGHT",
   "normalWeightTitle":"NORMAL",
   "overweightTitle": "OVERWEIGHT",
-  "obesityTitle":"OBESITY"
+  "obesityTitle":"OBESITY",
+  "snackBarMessage": "Your BMI has been successfully saved!"
 }

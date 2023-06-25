@@ -24,35 +24,35 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) => BlocListener<BmiCubit, BmiState>(
         listener: _listener,
         child: BlocBuilder<BmiCubit, BmiState>(
-          builder: (context, state) {
-            return Scaffold(
-              drawer: const DrawerBody(),
-              backgroundColor: backgroundColor,
-              appBar: AppBar(
-                backgroundColor: navyBlue,
-                title: Text(Strings.of(context).title),
-              ),
-              body: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(Dimens.xxl),
-                  child: Column(
-                    children: [
-                      const GenderPart(),
-                      const HeightTile(),
-                      const WeightAgePart(),
-                      const Spacer(),
-                      MyButton(
-                        onPressed: () {
-                          context.read<BmiCubit>().calculateBMI();
-                        },
+          builder: (context, state) => Scaffold(
+            drawer: const DrawerBody(),
+            backgroundColor: backgroundColor,
+            appBar: AppBar(
+              backgroundColor: navyBlue,
+              title: Text(Strings.of(context).title),
+            ),
+            body: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(Dimens.xxl),
+                child: Column(
+                  children: [
+                    const GenderPart(),
+                    const HeightTile(),
+                    const WeightAgePart(),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: Dimens.xm, left: Dimens.s, right: Dimens.s),
+                      child: MyButton(
+                        onPressed: () =>
+                            context.read<BmiCubit>().calculateBMI(),
                         title: Strings.of(context).calculate,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            );
-          },
+            ),
+          ),
         ),
       );
 
