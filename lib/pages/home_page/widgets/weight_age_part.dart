@@ -15,15 +15,15 @@ class WeightAgePart extends StatelessWidget {
             Expanded(
               child: WeightAgeTile(
                   value: state.weight,
-                  onIncrement: () => context.read<BmiCubit>().incrementWeight(),
-                  onDecrement: () => context.read<BmiCubit>().decrementWeight(),
+                  onIncrement: context.read<BmiCubit>().incrementWeight,
+                  onDecrement: context.read<BmiCubit>().decrementWeight,
                   nameOfParameter: Strings.of(context).weight),
             ),
             Expanded(
               child: WeightAgeTile(
                   value: state.age,
-                  onIncrement: () => context.read<BmiCubit>().incrementAge(),
-                  onDecrement: () => context.read<BmiCubit>().decrementAge(),
+                  onIncrement: context.read<BmiCubit>().incrementAge,
+                  onDecrement: context.read<BmiCubit>().decrementAge,
                   nameOfParameter: Strings.of(context).age),
             )
           ],

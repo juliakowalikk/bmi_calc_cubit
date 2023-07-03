@@ -20,13 +20,13 @@ class _GenderPartState extends State<GenderPart> {
             title: Strings.of(context).male,
             icon: Icons.male,
             onPressed: () => changeTile(Gender.male),
-            isClicked: isMaleSelected,
+            isSelected: isMaleSelected,
           ),
           GenderTile(
             title: Strings.of(context).female,
             icon: Icons.female,
             onPressed: () => changeTile(Gender.female),
-            isClicked: !isMaleSelected,
+            isSelected: !isMaleSelected,
           ),
         ],
       );

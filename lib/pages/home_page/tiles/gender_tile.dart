@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class GenderTile extends StatelessWidget {
   final String title;
   final IconData icon;
-  final bool isClicked;
+  final bool isSelected;
   final Function() onPressed;
 
   const GenderTile({
     super.key,
     required this.title,
     required this.icon,
-    required this.isClicked,
+    required this.isSelected,
     required this.onPressed,
   });
 
@@ -32,7 +32,7 @@ class GenderTile extends StatelessWidget {
                     child: Icon(
                       icon,
                       size: 80,
-                      color: isClicked ? white : grey,
+                      color: isSelected ? white : grey,
                     ),
                   ),
                 ),
@@ -41,7 +41,7 @@ class GenderTile extends StatelessWidget {
                   child: Text(
                     title,
                     style: TextStyle(
-                      color: isClicked ? white : grey,
+                      color: isSelected ? white : grey,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
